@@ -16,7 +16,7 @@
     <h1>Primeiros passos com DOM</h1>
     <p>Aqui vai o resultado</p>
     <p>Aprendendo a usar o <strong>DOM</strong> em Javascript.</p>
-    <div>Clique em mim</div>
+    <div id="msg" name="msg" class="msg">Clique em mim</div>
 
     <script>
         // Adicionando componentes por DOM
@@ -24,17 +24,33 @@
         window.document.write(window.navigator.appName + "<br>")
         window.document.write(window.document.URL + "<br>")
 
-        var p1 = window.document.getElementsByTagName("p")[0] // O "document" é opcional
-        // [0] é a primeira tag <p>
+        // SELECIONANDO POR TAG
+        var p1 = window.document.getElementsByTagName("p")[0] // O "document" é opcional e [0] é a primeira tag <p>              
         var p2 = window.document.getElementsByTagName("p")[1]
         var corpo = window.document.body
+        
         window.document.write("Está escrito assim: " + 
         p1.innerText + "<br>") // innerText para texto que está dentro do parágrafo
         p1.style.color = "blue"        
         corpo.style.background = "gray"
-
         window.document.write(p2.innerHTML) // innerHTML para pegar também a formatação
         window.alert(p2.innerText)
+
+        // SELECIONANDO POR ID
+        var d = window.document.getElementById("msg")
+        d.style.background = "green"        
+        
+        // SELECIONANDO POR NAME
+        var d = window.document.getElementsByName("msg")[0]
+        d.style.color = "red"
+
+        // SELECIONANDO POR CLASS
+        var d = window.document.getElementsByClassName("msg")[0]
+        d.innerText = "Oii"
+
+        // SELECIONANDO POR SELETOR CSS
+        var d = window.document.querySelector("div#msg")
+        d.style.background
     </script>
 </body>
 </html>
