@@ -12,6 +12,13 @@
     <input type="button" value="Verificar" onclick="calcular()">
     <div id="res"></div>
 
+    <h1>Sistema de nacionalidades</h1>
+
+    <label for="itxtpais">País: </label>
+    <input type="text" name="txtpais" id="itxtpais">    
+    <input type="button" value="Verificar" onclick="verificarNac()">
+    <div id="nac"></div>
+
     <script>
         function calcular() {
             var txtv = document.querySelector("input#txtvel")
@@ -25,6 +32,18 @@
 
             res.innerHTML += "<p> Dirija sempre com cinto de segurança! </p>"
         }        
+
+        function verificarNac() {
+            var txtpais = document.getElementById("itxtpais")
+            var país = txtpais.value
+            nac.innerHTML = `Você veio do(a) ${país}`
+            
+            if (país == "Brasil") {
+                nac.innerHTML += "<p>Você é brasileiro</p>"
+            } else {
+                nac.innerHTML += "<p>Você é gringo</p>"
+            }
+        }
     </script>
 </body>
 </html>
