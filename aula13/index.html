@@ -6,19 +6,28 @@
     <title>Verificador de Idade</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="carregar()">
+<body>
     <header>
         <h1>Verificador de Idade</h1>
     </header>
     <section>
-        <div id="msg">
-            <label for="itxtano">Ano de nascimento: </label>
-            <input type="number" name="txtano" id="itxtano">
-            <label for="iradsex">Sexo: </label>
-            <input type="radio" name="radsex" id="iradsex">
-            <input type="radio" name="" id="">
+        <div>
+            <div>
+                <label for="itxtano">Ano de nascimento: </label>
+                <input type="number" name="txtano" id="itxtano">
+            </div>
+            <div>
+                <legend>Sexo: </legend>
+                <input type="radio" name="radsex" id="imas" value="M" checked><label for="imas">Masculino</label><br>
+                <input type="radio" name="radsex" id="ifem" value="F"><label for="ifem">Feminino</label>
+            </div>
+            <div>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </div>
         </div>
-        <div id="imagem"></div>
+        <div id="res">
+            <p>Preencha os dados acima para ver o resultado</p>
+        </div>
     </section>
     <footer>
         <p>&copy; CursoemVídeo</p>
