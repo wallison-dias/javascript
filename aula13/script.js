@@ -45,8 +45,9 @@ function verificar() {
                 img.setAttribute("src", "imagens/idoso-f.jpg")
             }
         }
+        // É o mesmo que personalizar no CSS:
         res.style.textAlign = "center"
-        img.style.borderRadius = "50%"
+        img.style.borderRadius = "50%"       
 
         res.innerHTML = `<p>Detectamos ${gênero} de ${idade} anos</p>`
         res.appendChild(img)
