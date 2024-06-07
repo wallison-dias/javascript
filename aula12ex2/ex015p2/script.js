@@ -1,3 +1,20 @@
+function validarForm(event) {
+    // Deixa o ano atual como ano máximo no form
+    var anoNasc = document.getElementById("ianoNasc")
+    var maxAno = new Date().getFullYear()
+    anoNasc.setAttribute("max", maxAno)   
+
+    // Valida os requisitos dos inputs
+    event.preventDefault();
+    var form = document.getElementById("meuForm")
+
+    if (form.checkValidity()) {
+        verificar()
+    } else {
+        form.reportValidity()
+    }
+}
+
 function verificar() {
     var anoNasc = document.getElementById("ianoNasc")
     var idade = new Date().getFullYear() - anoNasc.value
@@ -5,8 +22,6 @@ function verificar() {
     var sex = document.getElementsByName("radsex")
 
     var img = document.createElement("img")
-    var maxAno = new Date().getFullYear()
-    anoNasc.setAttribute("max", maxAno)   
     
     if (sex[0].checked) {
         var gênero = "homem"
@@ -43,5 +58,6 @@ function verificar() {
     res.innerHTML = `Detectamos ${gênero} de ${idade} anos`
     res.appendChild(img)
 
+    res.style.marginBottom = "10px"
     res.style.textAlign = "center"
 }

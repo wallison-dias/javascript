@@ -11,7 +11,7 @@
         <h1>Verificador de Idade</h1>
     </header>
     <main>
-        <form onsubmit="verificar()">
+        <form id="meuForm" onsubmit="validarForm(event)">
             <label for="ianoNasc">Ano de nascimento: </label>
             <input type="number" name="anoNasc" id="ianoNasc" min="1850" required>
             <legend>Sexo:</legend>
