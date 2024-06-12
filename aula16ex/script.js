@@ -1,4 +1,6 @@
 let números = []
+let res = document.getElementById("resultado")
+
 function adicionar() {
     let txtnum = document.getElementById("inum")
     let num = Number(txtnum.value)
@@ -7,21 +9,19 @@ function adicionar() {
             alert("Digite um número")
         } else if (números.indexOf(num) == -1) {
             números.push(num)
-            let info = document.getElementsByTagName("div")[0]
-            info.innerHTML += `<p>Valor ${num} adicionado.</p>`
+            let lista = document.getElementsByTagName("select")[0]
+            lista.innerHTML += `<option>Valor ${num} adicionado.</option>`
         } else {
             alert("Esse número já está na lista, por favor digite outro.")
         }
     } else {
         alert("Digite um número entre 1 e 100")
     }
-    let res = document.getElementById("resultado")
     res.innerHTML = ""
 }
 
 function finalizar() { 
     números.sort()
-    let res = document.getElementById("resultado")
     let quant = números.length
     let maior = números[números.length - 1]
     let menor = números[0]
