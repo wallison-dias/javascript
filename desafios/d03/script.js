@@ -3,5 +3,5 @@ function calc() {
     let num = Number(numString)
     let ant = num-1
     let suc = num+1
-    window.alert(`Antes do ${num}, temos o número ${ant}. \n Depois do ${num}, temos o número ${suc}.`)
+    window.alert(`Antes do ${num}, temos o número ${ant}.\nDepois do ${num}, temos o número ${suc}.`)
 }
